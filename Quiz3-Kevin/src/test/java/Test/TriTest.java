@@ -10,8 +10,9 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
 public class TriTest {
-	
+
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -44,7 +45,7 @@ public class TriTest {
 		assertTrue(b.getArea() == 0.4330127018922193);
 		assertTrue(c.getArea() == 24.0);
 		assertTrue(d.getArea() == 3.872983346207417);
-		
+
 		assertFalse(a.getPerimeter() == 0.01);
 		assertFalse(b.getPerimeter() == 3.10);
 		assertFalse(c.getPerimeter() == 24.20);
@@ -56,10 +57,10 @@ public class TriTest {
 		assertFalse(d.getArea() == 63.872983346207417);
 
 	}
-	
-	@Test(expected=TriangleException.class)
+
+	@Test(expected = TriangleException.class)
 	public void triangleCheck() {
-		Triangle E  = new Triangle(-1.0, 4.0, -200.0); 
+		Triangle E = new Triangle(-1.0, 4.0, -200.0);
 		try {
 			E.acceptableTriangle();
 		} catch (TriangleException e) {
