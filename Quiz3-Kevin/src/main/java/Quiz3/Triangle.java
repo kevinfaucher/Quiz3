@@ -1,4 +1,5 @@
 package Quiz3;
+import Quiz3.TriangleException;
 
 import java.lang.Math;
 
@@ -27,10 +28,10 @@ public class Triangle extends GeometricObject {
 	}
 
 	public double getSide3() {
-		return side3;
+		return side3; 
 	}
 	// returns side 3
-
+ 
 	public double getArea() {
 		double s = this.getPerimeter() / 2;
 		return Math.sqrt(s * (s - this.side1) * (s - this.side2) * (s - this.side3));
@@ -39,6 +40,19 @@ public class Triangle extends GeometricObject {
 	public double getPerimeter() {
 		return (this.side1 + this.side2 + this.side3);
 	}
+	
+	public void acceptableTriangle() throws TriangleException{
+		double area = this.getArea();
+		 if(area > 0)
+	      {
+	          Double.toString(getArea());
+	      }
+	      else
+	      {
+	         throw new TriangleException(area);
+	      }
+	}
+
 
 	// returns str of results
 	public String toString() {
